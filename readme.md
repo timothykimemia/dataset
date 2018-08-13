@@ -44,7 +44,7 @@ LIST IS ENDLESS WHY CHOOSING THIS OPTION!
 ### CAUTION
 
 - This Configuration affects Model Relations. 
-- Make sure Migration foreign references database + table eg `foreign('user_id')->references('id)->on('*_core.users')->onDelete('cascade)`
+- Make sure Migration foreign references database + table eg `foreign('user_id')->references('id')->on('*_core.users')->onDelete('cascade)`
 - Make sure to add Connection name on Model User. 
 - Make sure on Request `rules()` to add Connection name + table eg `'unique:mysql.users'` (eg If you see exception `'*_asset.users table does not exist'`)
 
