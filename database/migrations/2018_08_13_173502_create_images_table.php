@@ -19,6 +19,7 @@ class CreateImagesTable extends Migration
             $table->integer('product_id')->unsigned()->nullable();
             $table->string('uid')->unique();
             $table->string('path');
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('timothy_core.users')->onDelete('cascade');

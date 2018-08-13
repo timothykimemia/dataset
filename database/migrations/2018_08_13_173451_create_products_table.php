@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->float('price');
             $table->integer('stock');
             $table->boolean('live')->default(false);
+            $table->softDeletes();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('timothy_core.users')->onDelete('cascade');

@@ -54,4 +54,8 @@ Feel free to Contribute more If you working on such environments and want to con
 
 ### Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel or such conditions, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+If you discover a security vulnerability within Laravel or such conditions, please send an e-mail to Laravel team [taylor@laravel.com](mailto:taylor@laravel.com).
+
+### License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
