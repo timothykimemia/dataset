@@ -24,18 +24,18 @@ LIST IS ENDLESS WHY CHOOSING THIS OPTION!
 
 - Folder: config > File: database.php > Set your Database Connections and Connection names to Configure on `Schema::connection('')` on Folder: database.
 - Folder: database > php artisan make:migration to create table then add `Schema::connection('')` to the Connection name where you want the table exist.
-- Models Folder: Add Database Connection 'connection' to your Models eg `connection = 'asset'` on Image.php Model (extension of Illuminate\Database\Eloquent\Model.php)
+- Models Folder: Add Database Connection 'connection' to your Models eg `protected $connection = 'asset'` on Image.php Model (extension of Illuminate\Database\Eloquent\Model.php)
 - DONE!
 
 ### Options
 
 - Laravel Queue: 
-- Add `'database' => 'connection' => 'queue'` to `'connections'` (If you have created a QUEUE connection and CHANGED `'defult' => env('QUEUE_DRIVER', 'database')`).
+- Add `'database' => ['connection' => 'queue']` to `'connections'` (If you have created a QUEUE connection and CHANGED `'default' => env('QUEUE_DRIVER', 'database')`).
 - Change `'failed' => ['database' => 'queue']`
 
 - Laravel Session:
 - Change `'driver' => env('SESSION_DRIVER', 'database')`
-- Change `'connection' => null` to Connection name you want table where database exists
+- Change `'connection' => null` to Connection name you want table where database exists ie `'connection' => 'activity'`
 
 ### Assistance
 
@@ -43,7 +43,7 @@ LIST IS ENDLESS WHY CHOOSING THIS OPTION!
 
 ### CAUTION
 
-- This Configuration affects Model Relations. 
+- This Configuration affects Model and Table Relations. 
 - Make sure Migration foreign references database + table eg `foreign('user_id')->references('id')->on('*_core.users')->onDelete('cascade)`
 - Make sure to add Connection name on Model User ie `protected $connection = 'mysql'`. 
 - Make sure on Request `rules()` to add Connection name + table eg `'unique:mysql.users'` (eg If you see exception `'*_asset.users table does not exist'`)
